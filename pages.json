@@ -1,0 +1,66 @@
+{
+  "pages": [
+    { "path": "pages/index/index", "style": { "navigationBarTitleText": "首页", "navigationStyle": "custom" } },
+    { "path": "pages/result/result", "style": { "navigationBarTitleText": "鉴定结果" } },
+    { "path": "pages/detail/detail", "style": { "navigationBarTitleText": "文物 3D 模型" } },
+    { "path": "pages/detail/diagnosis", "style": { "navigationBarTitleText": "AI 智能诊断" } },
+    { "path": "pages/detail/chat", "style": { "navigationBarTitleText": "蓝心讲解员" } },
+    {
+      "path": "pages/trade/market",
+      "style": {
+        "navigationBarTitleText": "文玩交易大厅"
+      }
+    },
+    {
+      "path": "pages/trade/estimate",
+      "style": {
+        "navigationBarTitleText": "AI 智能估价",
+        "navigationStyle": "custom"
+      }
+    },
+    { "path": "pages/trade/detail", "style": { "navigationBarTitleText": "藏品详情" } },
+    { "path": "pages/trade/goods-detail", "style": { "navigationBarTitleText": "商品详情" } },
+    { "path": "pages/trade/publish", "style": { "navigationBarTitleText": "发布藏品" } },
+    { "path": "pages/history/history", "style": { "navigationBarTitleText": "鉴定记录" } },
+    { "path": "pages/history/detail", "style": { "navigationBarTitleText": "鉴定报告" } },
+    { "path": "pages/profile/profile", "style": { "navigationBarTitleText": "个人中心", "navigationStyle": "custom" } }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "古玩智能鉴定",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#8b6914",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      { 
+        "pagePath": "pages/index/index", 
+        "text": "首页", 
+        "iconPath": "static/tabbar/home.png", 
+        "selectedIconPath": "static/tabbar/home-active.png" 
+      },
+      { 
+        "pagePath": "pages/trade/market", 
+        "text": "交易", 
+        "iconPath": "static/tabbar/trade.png", 
+        "selectedIconPath": "static/tabbar/trade-active.png" 
+      },
+      { 
+        "pagePath": "pages/history/history", 
+        "text": "记录", 
+        "iconPath": "static/tabbar/history.png", 
+        "selectedIconPath": "static/tabbar/history-active.png" 
+      },
+      { 
+        "pagePath": "pages/profile/profile", 
+        "text": "我的", 
+        "iconPath": "static/tabbar/profile.png", 
+        "selectedIconPath": "static/tabbar/profile-active.png" 
+      }
+    ]
+  }
+}
