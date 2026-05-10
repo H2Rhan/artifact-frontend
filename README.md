@@ -1,172 +1,126 @@
-markdown
-# 文物鉴定与交易平台
+# 🏺 文物鉴定与交易平台
 
-一个基于 AI 大模型的文物鉴定、估价与交易平台，支持古玩、钱币、瓷器等多种文物的智能识别、真伪鉴定、市场估价和在线交易功能。
+一个基于 **AI + C++** 的智能文物鉴定、估价与交易平台，融合深度学习、数值计算和现代Web技术，支持古玩、钱币、瓷器等多种文物的智能识别、真伪鉴定、市场估价和在线交易功能。
 
-## ✨ 功能特性
+---
 
-### 🤖 AI 智能鉴定
-- **图片识别**：上传文物图片，AI 自动识别文物类型、年代和特征
-- **真伪鉴定**：基于 AI 分析生成详细的鉴定报告
-- **病害诊断**：智能检测文物保存状况，提供修复建议
-- **联网搜索**：实时搜索市场价格和相似藏品信息
+## ✨ 核心亮点
 
-### 💰 智能估价系统
-- **AI 估价**：基于历史数据和市场行情，提供精准价格评估
-- **价格走势**：可视化展示文物价格历史趋势图
-- **对话式估价**：支持多轮对话，获取更详细的估价分析
-- **价格预测**：AI 预测未来价格走势
+- 🤖 **AI大模型驱动**：集成vivo蓝心大模型，实现智能鉴定与对话估价
+- ⚡ **C++高性能计算**：核心算法模块采用C++实现，确保数值计算的高效性
+- 📊 **技术分析引擎**：内置SMA/EMA/RSI/MACD/布林带等专业金融指标
+-  **多平台数据聚合**：实时爬取古泉园地、微拍堂、华夏古泉等主流平台数据
+- 🎨 **古风UI设计**：高端暖色调古风设计，提供沉浸式用户体验
 
-### 🛒 交易大厅
-- **藏品发布**：支持双轨制发布（AI 自动分类 + 手动编辑）
-- **分类浏览**：按钱币、瓷器、书画等分类浏览藏品
-- **在线交易**：完整的订单管理和交易流程
-- **市场动态**：实时查看市场行情和热门藏品
-
-### 📱 用户体验
-- **历史记录**：保存所有鉴定和估价记录
-- **个人中心**：管理个人信息和收藏
-- **多端适配**：支持小程序和 App 多端运行
+---
 
 ## 🛠 技术栈
 
-### 前端
-- **框架**：uni-app（Vue 2）
-- **UI 组件**：uni-ui
-- **图表**：Canvas 自定义绘制（价格走势图）
-- **网络请求**：uni.request + Promise 封装
+###  核心技术
 
-### 后端
-- **运行环境**：Node.js
-- **Web 框架**：Express 5.2
-- **HTTP 客户端**：Axios
-- **工具库**：UUID、CORS
-- **数据爬取**：cheerio、爬虫模块
+| 技术 | 用途 | 说明 |
+|------|------|------|
+| **C++ 11** | 核心算法引擎 | 价格预测、技术分析、图像处理 |
+| **Node.js / Express** | Web后端服务 | HTTP服务、API代理、数据管理 |
+| **Vue 2 / uni-app** | 前端框架 | 跨平台应用开发（小程序+App） |
+| **vivo AI平台** | AI能力 | 图片理解、文字生成、OCR识别 |
 
-### AI 服务
-- **vivo AIGC 平台**：图片理解、文字生成
-- **蓝心大模型**：智能对话、估价分析
-- **OCR 识别**：文字提取与信息识别
-- **联网搜索**：实时获取市场数据
+### 📦 C++ 核心模块
+
+#### 1. **价格预测引擎** (artifact_analyzer.cpp)
+- ✅ 移动平均线计算（SMA/EMA）
+- ✅ 相对强弱指数（RSI）
+- ✅ MACD指标分析
+- ✅ 布林带计算
+- ✅ 线性回归/多项式回归预测
+- ✅ 波动率分析
+
+#### 2. **图像处理与识别** (image_processor.cpp)
+- ✅ 颜色直方图提取
+- ✅ Sobel边缘检测
+- ✅ 纹理特征分析
+- ✅ 图像质量评估
+- ✅ 文物智能分类
+- ✅ 特征相似度计算
+
+#### 3. **爬虫核心引擎** (scraper_core.cpp)
+- ✅ HTTP请求封装（带重试机制）
+- ✅ JSON数据解析
+- ✅ 多平台数据聚合
+- ✅ 数据去重与搜索
+- ✅ 自动朝代/分类识别
+
+#### 4. **价格预测工具** (price_prediction.cpp)
+- ✅ 命令行价格预测
+- ✅ 统计数据计算
+- ✅ 趋势分析
+
+### 🌐 后端服务
+
+- **Express 5.2**：Web框架
+- **Axios**：HTTP客户端
+- **cheerio**：HTML解析
+- **UUID**：唯一标识生成
+- **CORS**：跨域支持
+
+### 🎨 前端技术
+
+- **uni-app**：跨平台框架
+- **Vue 2**：视图层
+- **Canvas**：自定义图表绘制
+- **uni-ui**：UI组件库
+
+---
 
 ## 📦 项目结构
-artifact-frontend/
-├── pages/ # 页面文件
-│ ├── index/ # 首页
-│ ├── detail/ # 详情页（鉴定、诊断、聊天）
-│ ├── trade/ # 交易相关（大厅、发布、订单）
-│ ├── history/ # 历史记录
-│ ├── profile/ # 个人中心
-│ └── result/ # 鉴定结果
+   artifact-frontend/
+├── artifact_analyzer.cpp # C++文物分析引擎
+├── image_processor.cpp # C++图像处理模块
+├── scraper_core.cpp # C++爬虫引擎
+├── price_prediction.cpp # C++价格预测工具
+├── cpp-module/ # C++模块
+├── pages/ # 前端页面
 ├── utils/ # 工具函数
-│ ├── api.js # API 请求封装
-│ ├── coinPriceScraper.js # 钱币价格爬虫
-│ └── ultimateScraper.js # 通用爬虫模块
 ├── static/ # 静态资源
-│ ├── tabbar/ # 底部导航图标
-│ ├── goods-images/ # 商品示例图片
-│ ── logo.png # 应用图标
-├── server.js # 后端服务（Express）
-├── scrape-images.js # 图片爬取脚本
-├── App.vue # 应用入口
-├── main.js # 主配置文件
-├── pages.json # 页面路由配置
-├── manifest.json # 应用配置
-── package.json # 项目依赖
-plaintext
+├── server.js # Node.js后端
+└── package.json # 项目依赖  plaintext           
+---
 
 ## 🚀 快速开始
 
 ### 环境要求
-- Node.js >= 14.x
-- HBuilderX（推荐）或 uni-app CLI
-- npm 或 yarn
+
+- **Node.js** >= 14.x
+- **C++ Compiler**：g++ >= 10.0
+- **HBuilderX**（推荐）
+- **npm** 或 yarn
 
 ### 安装步骤
 
-**1. 克隆项目**
+#### 1. 克隆项目
 
 ```bash
 git clone https://github.com/H2Rhan/artifact-frontend.git
 cd artifact-frontend
-2. 安装依赖
-bash
-npm install
-3. 配置 API 密钥在 server.js 中配置 vivo AI 平台的认证信息：
-javascript
-const API_CONFIG = {
-  app_id: '你的 app_id',
-  api_key: '你的 api_key',
+ 2. 安装依赖  bash     npm install
+ 3. 编译C++模块  bash     g++ -o artifact_analyzer.exe artifact_analyzer.cpp -std=c++11
+g++ -o image_processor.exe image_processor.cpp -std=c++11
+g++ -o scraper_core.exe scraper_core.cpp -std=c++11
+g++ -o price_prediction.exe price_prediction.cpp -std=c++11
+ 4. 配置API密钥 在 server.js 中配置vivo AI平台的认证信息。
+5. 启动服务  bash     node server.js
+6. 运行前端 使用HBuilderX打开项目，选择运行到浏览器。
+📖 功能说明 AI鉴定流程 1. 打开应用，点击 AI鉴定 2. 选择或拍摄文物照片 3. 等待AI分析（约5-10秒） 4. 查看鉴定报告
+💰 智能估价系统 1. 点击 估价 2. C++引擎计算技术指标 3. AI分析市场行情 4. 获取估价结果和趋势图
+🛒 发布藏品 1. 进入 交易大厅 → 发布藏品 2. 上传照片 3. AI自动识别 4. 提交发布
+🔧 API接口 接口 方法 描述   /api/identify POST AI文物鉴定  /api/estimate POST AI智能估价  /api/diagnosis POST 病害诊断  /api/chat POST AI对话  /api/predict-price POST C++价格预测   C++调用示例  bash     ./price_prediction.exe predict "350,365,358,372,380" 7   输出：  json           {
+  "prediction": 395.2,
+  "sma_7": 375.0,
+  "volatility": 0.035
 }
-4. 启动后端服务
-bash
-node server.js
-5. 运行前端项目
-使用 HBuilderX 打开项目
-选择运行到浏览器/模拟器/真机
-开发模式
-后端热重载（需要安装 nodemon）：
-bash
-npm install -g nodemon
-nodemon server.js
-前端开发：在 HBuilderX 中点击"运行" -> "运行到浏览器"
-📖 使用说明
-AI 鉴定流程
-打开应用，点击"AI 鉴定"
-选择或拍摄文物照片
-等待 AI 分析（约 5-10 秒）
-查看鉴定报告和详细信息
-可选择查看病害诊断或进行对话咨询
-发布藏品
-进入"交易大厅" -> "发布藏品"
-上传藏品照片
-AI 自动识别并填写基本信息
-补充价格、描述等信息
-提交发布
-估价功能
-在鉴定页面或交易页面点击"估价"
-AI 分析文物特征和市场行情
-获取估价结果和价格趋势图
-支持多轮对话深入了解估价依据
-🔧 API 说明
-主要接口
-接口	方法	描述
-/api/identify	POST	AI 文物鉴定
-/api/estimate	POST	AI 智能估价
-/api/diagnosis	POST	病害诊断
-/api/chat	POST	AI 对话
-/api/search	POST	联网搜索
-/api/publish	POST	发布藏品
-/api/trade/list	GET	获取交易列表
-vivo AI 平台配置
-本项目使用 vivo AIGC 平台提供 AI 能力，需要申请以下服务：
-图片理解 API：文物识别与分析
-文字生成 API：鉴定报告生成
-联网搜索 API：市场价格查询
-详细配置请参考 vivo 开放平台文档
-⚠️ 注意事项
-API 密钥安全
-不要将 API 密钥提交到 Git
-使用环境变量管理敏感信息
-定期更新密钥
-图片资源
-示例图片来自公开数据源
-生产环境建议使用自己的图片服务器
-注意图片版权和合规性
-网络请求
-本地开发时注意跨域配置
-生产环境配置正确的请求域名
-合理设置超时时间
-🤝 贡献指南
-欢迎提交 Issue 和 Pull Request！
-Fork 本项目
-创建特性分支 (git checkout -b feature/AmazingFeature)
-提交更改 (git commit -m 'Add some AmazingFeature')
-推送到分支 (git push origin feature/AmazingFeature)
-开启 Pull Request
-📄 许可证
-本项目采用 MIT 许可证
-联系方式
-项目地址：https://github.com/H2Rhan/artifact-frontend
-问题反馈：Issues
-感谢使用！如果觉得项目对你有帮助，欢迎 Star ⭐
+📊 技术指标 指标 全称 用途   SMA Simple Moving Average 简单移动平均  EMA Exponential Moving Average 指数移动平均  RSI Relative Strength Index 相对强弱指数  MACD Moving Average Convergence Divergence 指数平滑异同平均线  Bollinger Bands 布林带 价格波动区间
+ ⚠️ 注意事项
+• 🔐 不要将API密钥提交到Git
+• 📷 示例图片来自公开数据源
+• 🌍 本地开发注意跨域配置
+ ⭐ 如果这个项目对你有帮助，欢迎Star！
