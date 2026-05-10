@@ -98,22 +98,26 @@
 ### 安装步骤
 
 #### 1. 克隆项目
-
-```bash
 git clone https://github.com/H2Rhan/artifact-frontend.git
 cd artifact-frontend
- 2. 安装依赖  bash     npm install
- 3. 编译C++模块  bash     g++ -o artifact_analyzer.exe artifact_analyzer.cpp -std=c++11
+ 2. 安装依赖 
+ npm install
+ 3. 编译C++模块
+g++ -o artifact_analyzer.exe artifact_analyzer.cpp -std=c++11
 g++ -o image_processor.exe image_processor.cpp -std=c++11
 g++ -o scraper_core.exe scraper_core.cpp -std=c++11
 g++ -o price_prediction.exe price_prediction.cpp -std=c++11
  4. 配置API密钥 在 server.js 中配置vivo AI平台的认证信息。
-5. 启动服务  bash     node server.js
+5. 启动服务
+node server.js
 6. 运行前端 使用HBuilderX打开项目，选择运行到浏览器。
 📖 功能说明 AI鉴定流程 1. 打开应用，点击 AI鉴定 2. 选择或拍摄文物照片 3. 等待AI分析（约5-10秒） 4. 查看鉴定报告
 💰 智能估价系统 1. 点击 估价 2. C++引擎计算技术指标 3. AI分析市场行情 4. 获取估价结果和趋势图
 🛒 发布藏品 1. 进入 交易大厅 → 发布藏品 2. 上传照片 3. AI自动识别 4. 提交发布
-🔧 API接口 接口 方法 描述   /api/identify POST AI文物鉴定  /api/estimate POST AI智能估价  /api/diagnosis POST 病害诊断  /api/chat POST AI对话  /api/predict-price POST C++价格预测   C++调用示例  bash     ./price_prediction.exe predict "350,365,358,372,380" 7   输出：  json           {
+🔧 API接口 接口 方法 描述   /api/identify POST AI文物鉴定  /api/estimate POST AI智能估价  /api/diagnosis POST 病害诊断  /api/chat POST AI对话  /api/predict-price POST C++价格预测  
+C++调用示例  
+./price_prediction.exe predict "350,365,358,372,380" 7  
+输出：  {
   "prediction": 395.2,
   "sma_7": 375.0,
   "volatility": 0.035
